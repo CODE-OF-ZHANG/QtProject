@@ -1,0 +1,2 @@
+# QtProject
+Learning Qt
