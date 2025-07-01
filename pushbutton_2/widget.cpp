@@ -21,6 +21,24 @@ Widget::Widget(QWidget *parent)
 
     ui->pushButton_target->setIcon(QIcon(":/images/preview.jpg"));
     ui->pushButton_target->setIconSize(QSize(120, 120));
+
+    // 1. 直接通过键盘按键名称来设置快捷键
+//    ui->pushButton_up->setShortcut(QKeySequence("w"));
+//    ui->pushButton_down->setShortcut(QKeySequence("s"));
+//    ui->pushButton_left->setShortcut(QKeySequence("a"));
+//    ui->pushButton_right->setShortcut(QKeySequence("d"));
+
+    // 2. 通过按键枚举设置快捷键
+    ui->pushButton_up->setShortcut(QKeySequence(Qt::Key_W));
+    ui->pushButton_down->setShortcut(QKeySequence(Qt::Key_S));
+    ui->pushButton_left->setShortcut(QKeySequence(Qt::Key_A));
+    ui->pushButton_right->setShortcut(QKeySequence(Qt::Key_D));
+
+    // 开启鼠标点击的连发功能 (键盘默认可以连发)
+    ui->pushButton_up->setAutoRepeat(true);
+    ui->pushButton_down->setAutoRepeat(true);
+    ui->pushButton_left->setAutoRepeat(true);
+    ui->pushButton_right->setAutoRepeat(true);
 }
 
 Widget::~Widget()
