@@ -22,11 +22,12 @@ void Widget::on_pushButton_clicked()
     QDateTime timeNew = ui->dateTimeEdit_2->dateTime();
 
     // 计算时间差值
-    int days = timeOld.daysTo(timeNew);
+    //int days = timeOld.daysTo(timeNew);
     int seconds = timeOld.secsTo(timeNew);
 
     // 秒换算成小时
     int hours = (seconds / 3600) % 24;
+    int days = (seconds / 3600) / 24;
 
     // 将结果放入 label 中
     ui->label->setText(QString("爱你已经持续了") + QString::number(days)
